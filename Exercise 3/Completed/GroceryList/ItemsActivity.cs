@@ -24,7 +24,14 @@ namespace GroceryList
 		{
 			int position = e.Position; // e.Position is the position in the list of the item the user touched
 
-			// TODO
+            // TODO
+            // we can make a bundle object and load it with the data like this (var bundle = new Bundle(position));
+            //and then load it using the putExtra("name",bundle); 
+            var intent = new Intent(this, typeof(DetailsActivity));
+            intent.PutExtra("ItemPosition", position);
+            StartActivity(intent);
+            
+
 		}
 	}
 }

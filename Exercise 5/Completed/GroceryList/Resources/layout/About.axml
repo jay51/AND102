@@ -1,33 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-	xmlns:android        ="http://schemas.android.com/apk/res/android"
-	android:orientation  ="vertical"
-	android:layout_width ="match_parent"
-	android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="140.0dp"
+        android:layout_margin="20dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum commodo enim ut scelerisque. Vivamus nisi neque, scelerisque eu est a, rutrum lobortis justo. Duis luctus, purus nec ultricies tempus, ante tellus dapibus justo, vitae posuere dui lorem in nunc." />
+<!-- This FrameLayout adds no behavior to the UI, it simply occupies all the extra space which forces the views below down to the bottom of the screen. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Built with Xamarin.Android" />
+    <Button
+        android:id="@+id/learnMoreButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Learn more (youtube)" />
+    <Button
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lanuch camera" />
+    <Button
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lanuch EMAIL" />
 
-	<TextView
-		android:layout_width ="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="20dp"
-		android:text         ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum commodo enim ut scelerisque. Vivamus nisi neque, scelerisque eu est a, rutrum lobortis justo. Duis luctus, purus nec ultricies tempus, ante tellus dapibus justo, vitae posuere dui lorem in nunc." />
-
-	<!-- This FrameLayout adds no behavior to the UI, it simply occupies all the extra space which forces the views below down to the bottom of the screen. -->
-	<FrameLayout
-		android:layout_width ="match_parent"
-		android:layout_height="match_parent"
-		android:layout_weight="1" />
-
-	<TextView
-		android:layout_width      ="match_parent"
-		android:layout_height     ="wrap_content"
-		android:layout_marginLeft ="20dp"
-		android:layout_marginRight="20dp"
-		android:text              ="Built with Xamarin.Android" />
-
-	<Button
-		android:id           ="@+id/learnMoreButton"
-		android:layout_width ="match_parent"
-		android:layout_height="wrap_content"
-		android:text         ="Learn more" />
+  <Button
+      android:id="@+id/map"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="MY location" />
 
 </LinearLayout>

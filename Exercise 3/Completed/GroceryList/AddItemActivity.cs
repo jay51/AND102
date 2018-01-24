@@ -22,9 +22,18 @@ namespace GroceryList
 		{
 			string name  = FindViewById<EditText>(Resource.Id.nameInput).Text;
 			int    count = int.Parse(FindViewById<EditText>(Resource.Id.countInput).Text);
+            
+            // TODO
+            // create an intent and load it with the data .
+            var intent = new Intent();
+            intent.PutExtra("ItemName", name);
+            intent.PutExtra("ItemCount", count);
+            //send the result back.
+            SetResult(Result.Ok, intent);
+            //end the activity.
+            Finish();
 
-			// TODO
-		}
+        }
 
 		void OnCancelClick(object sender, EventArgs e)
 		{

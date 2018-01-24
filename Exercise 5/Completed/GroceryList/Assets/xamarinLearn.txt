@@ -1,0 +1,77 @@
+﻿Note: an android app is a collection of cooperative activites 
+Activites : consest of two files axml which is the UI and a C# file which is the behiver.
+
+Note:an activity can start another activity in or from the same apk(same application).
+
+OS Services: system services such as (Network connection,Displaying notifications,GPS.....ect)
+
+context class: have all the files or access to all the files and system services required for your app(folders,OS,database....).
+Note:activity class inherits from context therefor the activity class have all the files and access to all files.
+Note:context provides a collection of services to your Activity.
+
+Intent class: is a request you send to android OS to start an activity , you also can send attributes inside the intent.
+Note:an explicit Intent is An Intent that exactly identifies the target Activity that you want to start.
+Note:an explicit Intent can start an activity in your apk or another app apk as long as you know the packge name and the class name.
+
+Note:There are multiple ways to start an Activity.Some give you the ability to pass arguments, some let you harvest results,
+and some are convenience methods for simple cases.
+
+Note:There are three main navigation pattrens (stack,tap,drawer) 
+
+Back Stack: is a historical recored of the user's live activity. Android automatically adds and removes activity to the back stack
+when the user start a new activity or pushs the back button to exit an activity.
+
+
+Bundle class : A data structure of key value pares passed between activates like dict and json in python.
+Note: you pass arguments between activates by loading them into a bundle , (objects must be serializaied to be passed  )
+
+Note: there's two ways to load intent extrases (data)
+1) expicit creation by creating a bundle object and an intent , fuiling the bundle with data and using putExtras method to load the bundle into the intent
+2) create an intent , the intent class already has method to create a bundle and load it with data.
+Note: to retrieve back the data passed in the intent use the inherited property named (Intent) and the method (GetIntExtra).
+
+Activity and Target Activity : are two activties interacting with each other by passign data to one onther or starting the target activity ....
+Note:source activity can send and recive data back from the traget activity in the form of (no return value,only a seucess/faluer code, data and a seucess/faluer code).
+the source activity send an intent Extras request code to the target activity , the target activity will return the same request code as well as a result code
+and an intent containing a bundle of Extras.
+
+
+Note: when the source activity needs to get back result from the target activity , the source activity needs to call the (StartActivtiyForResult) method instead
+of (StartActivty) and overrides (OnActivityResult) method to recive the result when the target is fnished. In the target activity we need to call (setResult)
+to return a secusse or faluir code as well as an optional intent full of extras
+
+Result code:is an intger you pass to an activity to help identify it . you will get the same value back when the activity finshes.
+Note: it dosen't matter what the value is because it's only meaningfull for you to identify the activty .
+Note: your target activty uses it's (setResult(resultcode, intent)) to report it's result back to the source.
+Note: you override  "onActivityReslut()" in your source activity to receive these result.
+
+Note: The MainActivity used StartActivityForResult to launch the AddItemActivity. This means that when AddItemActivity finishes, the OnActivityResult method in MainActivity will run.
+This is where you retrieve the results.
+
+########################################################
+android apps are often discriped as a collection of collaboration activities that include all the activities installed on a divice regurdless of which app 
+the came from.
+
+Implicit intent: is an intent that dosen't identify the exacte activity to start instead , it discreibe the action that needs get done and let android
+choose and activity to handle your requeist and if there's more then one activity to do that , android will display a picker to let you decide.
+
+Note: implicit intent are tipically used to start an activity outside of your apk.However can also be used to start an activity inside your apk but that's
+not common since expicit intent are easier to work with.
+
+implicit intent can contain:
+Action: At a highe level is the thing you want to get done.
+Data: data that get passed to the target activity like a phone number or an email address.
+MIME Type: kind of inforamtion that the activity is going to operate on helping android to decide which activty to launch.
+Categories: can be a highe level of discription of style of activity you want.
+Extras: to get more details about what you want to get done to the target activity or give it data to operate on.
+
+
+ 
+
+
+
+
+
+
+
+
